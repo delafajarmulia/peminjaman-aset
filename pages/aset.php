@@ -23,10 +23,10 @@
                     </div>
 
                     <div class="edit">
-                        <a href="" class="btn-edit">Edit Aset</a><br>
+                        <a href="edit.php?id=<?php echo $data['id'];?>" class="btn-edit">Edit Aset</a><br>
                     </div>
                     <div class="hapus">
-                        <a href="" class="btn-hapus">Hapus Aset</a>
+                        <a href="../logic/hapus.php?id=<?php echo $data['id'];?>" class="btn-hapus">Hapus Aset</a>
                     </div>
                 </div>
         <?php } ?>

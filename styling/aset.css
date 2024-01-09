@@ -2,8 +2,16 @@
     font-family: Arial, Helvetica, sans-serif;
     color: #474E68;
 }
+.con-aset{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
 .aset{
-    max-width: 500px;
+    min-width: 500px;
     min-height: 230px;
     background-color: #AFC8AD;
     padding-top: 10px;
@@ -16,7 +24,7 @@ a{
     text-decoration: none;
 }
 .edit{
-    background-color: aqua;
+    background-color: #88AB8E;
     width: 450px;
     height: 25px;
     margin-left: auto;
@@ -28,7 +36,7 @@ a{
     margin-bottom: 10px;
 }
 .hapus{
-    background-color: aqua;
+    background-color: #88AB8E;
     width: 450px;
     height: 25px;
     margin-left: auto;

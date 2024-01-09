@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pinjem Seratus</title>
+    <title>Pinjem Asep</title>
     <link rel="stylesheet" href="../styling/index.css">
 </head>
 <body>
     <div class="container">
 
         <nav>
-            <h2>Pinjem Seratus</h2>
+            <h2>Pinjem Asep</h2>
             <a href="aset.php" class="spill">Spill Aset</a>
         </nav>
         <div class="input-page">
             <div class="input-card">
-                <h1 class="title-card">Pinjem Seratus</h1>
+                <h1 class="title-card">Pinjem Asep</h1>
 
                 <div class="input-content">
                     <img src="../image.jpg" alt="">
