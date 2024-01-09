@@ -1,0 +1,122 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #474E68;
+}
+/* .container{
+    background-color: #88AB8E;
+} */
+nav{
+    background-color: #88AB8E;
+    /* box-shadow: 10px 10px 10px gray; */
+    margin-bottom: -25px;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.spill{
+    background-color: #AFC8AD;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    padding-top: 7px;
+    margin-top: 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px gray;
+}
+.spill:hover{
+    background-color: #739072;
+}
+.input-page{
+    background-color: #88AB8E;
+    /* width: 100%; */
+    height: 100vh;
+}
+.input-card{
+    background-color: #AFC8AD;
+    min-height: 600px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 3%;
+    box-shadow: 10px 10px 10px gray;
+}
+.title-card{
+    text-align: center;
+    padding-top: 20px;
+}
+.input-content{
+    padding-left: 30px;
+    padding-right: 20px;
+    padding-top: 15px;
+    display: flex;
+}
+img{
+    width: 300px;
+    height: 440px;
+    border-radius: 5px;
+}
+.form-input{
+    margin-left: 30px;
+}
+input{
+    width: 300px;
+    height: 20px;
+    border: none;
+    border-radius: 3px;
+    background-color: #D8D8D8;
+    margin-top: 5px;
+}
+.input{
+    margin-top: 10px;
+}
+.input-date{
+    width: 300px;
+    height: 27px;
+}
+textarea{
+    border: none;
+    background-color: #D8D8D8;
+    border-radius: 3px;
+}
+.submit{
+    width: 300px;
+    height: 30px;
+    background-color: #88AB8E;
+    margin-top: 10px;
+}
+.submit:hover{
+    background-color: #739072;
+}
+
+/* .show-aset{
+    min-height: 100vh;
+} */
+.a-div{
+    text-decoration: none;
+}
+.con-aset{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+.card-aset{
+    max-width: 300px;
+    min-height: 300px;
+    background-color: #739072;
+    border-radius: 5px;
+    margin-top: 50px;
+    padding-left: 20px;
+    padding-top: 15px;
+    box-shadow: 5px 5px 5px gray;
+}
+.card-aset:hover{
+    background-color: #88AB8E;
+    box-shadow: none;
+}
