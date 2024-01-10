@@ -11,7 +11,7 @@
 
         <nav>
             <h2>Pinjem Asep</h2>
-            <a href="aset.php" class="spill">Spill Aset</a>
+            <a href="aset.php" class="spill">Spill Asep</a>
         </nav>
         <div class="input-page">
             <div class="input-card">

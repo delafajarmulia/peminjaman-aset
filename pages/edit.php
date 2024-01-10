@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="con-edit">
-        <div class="card-edit">
+        <!-- <div class="card-edit"> -->
             <h3>Edit Asep</h3>
             <div class="card-form">
                 <form action="" method="post">
@@ -26,7 +26,7 @@
                     </div>
                 </form>
             </div>
-        </div>
+        <!-- </div> -->
     </div>
 </body>
 </html>
