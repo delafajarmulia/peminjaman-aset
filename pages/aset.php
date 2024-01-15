@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="../styling/aset.css">
 </head>
 <body>
+    <?php
+        include '../features/navbar.php';
+    ?>
     <div class="con-aset">
 
         <?php

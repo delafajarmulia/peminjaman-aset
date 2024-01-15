@@ -30,4 +30,16 @@ input{
     background-color: #D8D8D8;
     border: none;
     border-radius: 3px;
+    margin-top: 5px;
+}
+.submit{
+    width: 305px;
+    height: 30px;
+    margin-top: 15px;
+    background-color: #739072;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px gray;
+}
+.submit:hover{
+    background-color: #547552;
 }

@@ -67,16 +67,42 @@
         ?>
             <!-- <div class="show-aset">
                 <div class="con-aset"> -->
-                    <a href="" class="a-div">
+                    <a href="edit-pinjam.php?id=<?php echo $data['id'];?>" class="a-div">
                         <div class="card-aset">
-                            <h3><?php echo $data['nama_aset'];?></h3>
-                            <p><?php echo $data['nama_peminjam'];?></p>
-                            <p><?php echo $data['jumlah'];?></p>
-                            <p><?php echo $data['tanggal_pinjam'];?></p>
-                            <p><?php echo $data['rencana_pengembalian'];?></p>
-                            <p><?php echo $data['tanggal_pengembalian'];?></p>
-                            <p><?php echo $data['peruntukan'];?></p>
-                            <p><?php echo $data['status'];?></p>
+                            <table class="table-pinjam">
+                                <tr>
+                                    <td>Nama Aset</td>
+                                    <td>: <?php echo $data['nama_aset'];?></td>
+                                </tr>
+                                <tr>
+                                    <td>Nama Peminjam</td>
+                                    <td>: <?php echo $data['nama_peminjam'];?></td>
+                                </tr>
+                                <tr>
+                                    <td>Jumlah</td>
+                                    <td>: <?php echo $data['jumlah'];?></td>
+                                </tr>
+                                <tr>
+                                    <td>Tanggal Pinjam</td>
+                                    <td>: <?php echo $data['tanggal_pinjam'];?></td>
+                                </tr>
+                                <tr>
+                                    <td>Rencana Pengembalian</td>
+                                    <td>: <?php echo $data['rencana_pengembalian'];?></td>
+                                </tr>
+                                <tr>
+                                    <td>Tanggal Pengembalian</td>
+                                    <td>: <?php echo $data['tanggal_pengembalian'];?></td>
+                                </tr>
+                                <tr>
+                                    <td>Peruntukan</td>
+                                    <td>: <?php echo $data['peruntukan'];?></td>
+                                </tr>
+                                <tr>
+                                    <td>Status</td>
+                                    <td>: <?php echo $data['status'];?></td>
+                                </tr>
+                            </table>
                         </div>
                     </a>
                 <!-- </div>
