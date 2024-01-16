@@ -35,11 +35,11 @@
                             </div>
                             <div class="input">
                                 <label for="">Tanggal Peminjaman</label><br>
-                                <input type="date" class="input-date" name="tanggal_pinjam">
+                                <input type="datetime-local" class="input-date" name="tanggal_pinjam">
                             </div>
                             <div class="input">
                                 <label for="">Rencana Pengembalian</label><br>
-                                <input type="date" class="input-date" name="rencana_pengembalian">
+                                <input type="datetime-local" class="input-date" name="rencana_pengembalian">
                             </div>
                             <div class="input">
                                 <label for="">Peruntukan Peminjaman</label><br>
