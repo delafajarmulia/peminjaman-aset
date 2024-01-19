@@ -1,0 +1,53 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #474E68;
+}
+.container{
+    background-color: #88AB8E;
+    height: 100vh;
+}
+.con-card{
+    background-color: #AFC8AD;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    min-height: 650px;
+    /* margin-top: -10px; */
+    border-radius: 3%;
+}
+.title{
+    text-align: center;
+    padding-top: 10px;
+}
+.con-card .input-table{
+    max-width: 1000px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+td > input{
+    width: 200px;
+    height: 20px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 10px;
+}
+.date{
+    width: 203px;
+    height: 22px;
+}
+textarea{
+    border: none;
+    border-radius: 3px;
+}
+select{
+    width: 215px;
+    height: 25px;
+    border: none;
+    border-radius: 3px;
+}
+.submit{
+    height: 30px;
+    width: 100%;
+    margin-top: 20px;
+}
