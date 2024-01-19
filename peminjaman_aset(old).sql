@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 19, 2024 at 11:19 AM
+-- Generation Time: Jan 16, 2024 at 02:53 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -30,19 +30,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `asets` (
   `id` varchar(10) NOT NULL,
   `nama` varchar(50) NOT NULL,
-  `jumlah` int(11) DEFAULT NULL,
-  `availabled` int(11) DEFAULT NULL
+  `jumlah` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `asets`
 --
 
-INSERT INTO `asets` (`id`, `nama`, `jumlah`, `availabled`) VALUES
-('K001', 'Kamera', 3, NULL),
-('K002', 'Laptop Zyrex', 5, NULL),
-('K003', 'HP Samsung S23', 1, NULL),
-('K004', 'Rol ', 5, 5);
+INSERT INTO `asets` (`id`, `nama`, `jumlah`) VALUES
+('K001', 'Kamera', 3),
+('K002', 'Laptop Zyrex', 23),
+('K003', 'HP Samsung S23', 1);
 
 -- --------------------------------------------------------
 
@@ -60,9 +58,7 @@ CREATE TABLE `employees` (
 --
 
 INSERT INTO `employees` (`id`, `nama`) VALUES
-(1, 'Dela Fajar Mulia'),
-(2, 'Dela'),
-(3, 'Atul');
+(1, 'Dela Fajar Mulia');
 
 -- --------------------------------------------------------
 
@@ -80,7 +76,7 @@ CREATE TABLE `peminjaman` (
   `rencana_pengembalian` timestamp NULL DEFAULT NULL,
   `tanggal_pengembalian` timestamp NULL DEFAULT NULL,
   `peruntukan` varchar(100) DEFAULT NULL,
-  `status` enum('masih-pinjam','sudah-dikembalikan','terlambat-dikembalikan') DEFAULT NULL
+  `status` enum('masih-pinjam',' sudah-dikembalikan','terlambat-dikembalikan') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -88,10 +84,8 @@ CREATE TABLE `peminjaman` (
 --
 
 INSERT INTO `peminjaman` (`id`, `aset_id`, `employee_id`, `nama_peminjam`, `jumlah`, `tanggal_pinjam`, `rencana_pengembalian`, `tanggal_pengembalian`, `peruntukan`, `status`) VALUES
-(1, 'K001', 1, 'Dela Fajar Mulia', 2, '2024-01-07 17:00:00', '2024-01-07 17:00:00', '2024-01-03 20:02:00', 'iseng aja', 'sudah-dikembalikan'),
-(2, 'K001', NULL, 'Fajar', 2, '2024-01-01 17:00:00', '2024-01-02 17:00:00', '2024-01-03 17:00:00', 'cek', 'terlambat-dikembalikan'),
-(3, 'K002', 2, 'Dela', 1, '2024-01-19 09:01:00', '2024-01-23 09:01:00', NULL, 'buat nonton anime', 'masih-pinjam'),
-(4, 'K002', 3, 'Atul', 1, '2024-01-19 09:13:00', '2024-01-27 09:13:00', '2024-01-19 09:21:00', 'tak tau', 'sudah-dikembalikan');
+(1, 'K001', 1, 'Dela Fajar Mulia', 2, '2024-01-07 17:00:00', '2024-01-07 17:00:00', '2024-01-07 17:00:00', 'iseng aja', ' sudah-dikembalikan'),
+(2, 'K001', NULL, 'Fajar', 2, '2024-01-01 17:00:00', '2024-01-02 17:00:00', NULL, 'cek', 'masih-pinjam');
 
 --
 -- Indexes for dumped tables
@@ -125,13 +119,13 @@ ALTER TABLE `peminjaman`
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
