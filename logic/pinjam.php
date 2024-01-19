@@ -30,23 +30,23 @@
             echo "aset tidak tersedia";
         }else if($employee_id == ''){
             $query_add_pinjam = "INSERT INTO peminjaman(aset_id, nama_peminjam, jumlah, tanggal_pinjam, rencana_pengembalian, peruntukan, status)
-                                VALUES('$aset_id', '$nama_peminjam', $jumlah, '$tanggal_peminjaman', '$rencana_pengembalian', '$peruntukan', 'masih pinjam')";
+                                VALUES('$aset_id', '$nama_peminjam', $jumlah, '$tanggal_peminjaman', '$rencana_pengembalian', '$peruntukan', 'masih-pinjam')";
             $query_add = mysqli_query($conn, $query_add_pinjam);
 
             if(!$query_add){
                 die("gagal menambahkan data");
             } else{
-                echo "ok";
+                echo header('location:../pages/index.php?refresh=1');
             }
         }else{
             $query_add_pinjam = "INSERT INTO peminjaman(aset_id, employee_id, nama_peminjam, jumlah, tanggal_pinjam, rencana_pengembalian, peruntukan, status)
-                                VALUES('$aset_id', $employee_id, '$nama_peminjam', $jumlah, '$tanggal_peminjaman', '$rencana_pengembalian', '$peruntukan', 'masih pinjam)";
+                                VALUES('$aset_id', $employee_id, '$nama_peminjam', $jumlah, '$tanggal_peminjaman', '$rencana_pengembalian', '$peruntukan', 'masih-pinjam')";
             $query_add = mysqli_query($conn, $query_add_pinjam);
 
             if(!$query_add){
                 die("gagal menambahkan data");
             } else{
-                echo "ok";
+                echo header('location:../pages/index.php?refresh=1');
             }
         }
     }

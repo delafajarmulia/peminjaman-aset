@@ -13,6 +13,7 @@
             <h2>Pinjem Asep</h2>
             <a href="aset.php" class="spill">Spill Asep</a>
         </nav>
+
         <div class="input-page">
             <div class="input-card">
                 <h1 class="title-card">Pinjem Asep</h1>
@@ -54,16 +55,45 @@
             </div>
         </div>
 
+        <div class="search">
+            <table>
+                <tr>
+                    <form action="index.php" method="post">
+                        <td><input type="text" name="search" id="" class="input-search"></td>
+                        <td><input type="submit" value="Search By ID Barang" name="search-by-id-aset" class="btn-search"></td>
+                    </form>
+                </tr>
+            </table>
+        </div>
+
+        <?php
+            if(isset($_GET['refresh'])){
+                refresh();
+            }else if(isset($_POST['search-by-id-aset'])){
+                include '../logic/search.php';
+                searchByIdAset($_POST['search']);
+            }else{
+                refresh();
+            }
+        ?>
+
             <div class="show-aset">
                 <div class="con-aset">
         <?php
+            function hey($datas){
+                var_dump($datas);
+            }
             function refresh(){
                 include '../connector.php';
 
                 $get_all_data = mysqli_query($conn, "SELECT p.id as id, nama_peminjam, p.jumlah, tanggal_pinjam, rencana_pengembalian, tanggal_pengembalian, peruntukan, status, a.nama as nama_aset 
                                                     FROM peminjaman as p LEFT JOIN asets as a ON p.aset_id = a.id");
-
-                while($data = mysqli_fetch_assoc($get_all_data)){
+                
+                loadData($get_all_data); 
+            }
+                
+            function loadData($datas){
+                while($data = mysqli_fetch_assoc($datas)){
         ?>
             <!-- <div class="show-aset">
                 <div class="con-aset"> -->
@@ -109,13 +139,13 @@
             </div> -->
         <?php
                 }
-            }
+            }            
         ?>
                 </div>
             </div>
 
 
-        <?php refresh(); ?>
+        <?php //refresh(); ?>
     </div>
 </body>
 </html>
