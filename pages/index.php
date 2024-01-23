@@ -18,6 +18,11 @@
             <div class="input-card">
                 <h1 class="title-card">Pinjem Asep</h1>
 
+                <?php
+                    include '../connector.php';
+                    $getAsets = mysqli_query($conn, "SELECT nama FROM asets");
+                ?>
+
                 <div class="input-content">
                     <img src="../image.jpg" alt="">
                     <div class="form-input">
@@ -28,7 +33,10 @@
                             </div>
                             <div class="input">
                                 <label for="">Nama Barang</label><br>
-                                <input type="text" name="nama_barang">
+                                <select name="nama_barang" id="">
+                                    <?php while($aset = mysqli_fetch_assoc($getAsets)){ ?>
+                                        <option value="<?php echo $aset['nama'];?>"><?php echo $aset['nama'];}?></option>
+                                </select>
                             </div>
                             <div class="input">
                                 <label for="">Jumlah Aset</label><br>
@@ -80,9 +88,10 @@
             <div class="show-aset">
                 <div class="con-aset">
         <?php
-            function hey($datas){
+            function resultSearchById($datas){
                 var_dump($datas);
             }
+            
             function refresh(){
                 include '../connector.php';
 
@@ -141,6 +150,50 @@
                 }
             }            
         ?>
+
+            <?php
+                function result($data){
+                    while($data){
+            ?>
+                    <a href="edit-pinjam.php?id=<?php echo $data['id'];?>" class="a-div">
+                        <div class="card-aset">
+                            <table class="table-pinjam">
+                                <tr>
+                                    <td>Nama Aset</td>
+                                    <td>: <?php echo $data['nama_aset'];?></td>
+                                </tr>
+                                <tr>
+                                    <td>Nama Peminjam</td>
+                                    <td>: <?php echo $data['nama_peminjam'];?></td>
+                                </tr>
+                                <tr>
+                                    <td>Jumlah</td>
+                                    <td>: <?php echo $data['jumlah'];?></td>
+                                </tr>
+                                <tr>
+                                    <td>Tanggal Pinjam</td>
+                                    <td>: <?php echo $data['tanggal_pinjam'];?></td>
+                                </tr>
+                                <tr>
+                                    <td>Rencana Pengembalian</td>
+                                    <td>: <?php echo $data['rencana_pengembalian'];?></td>
+                                </tr>
+                                <tr>
+                                    <td>Tanggal Pengembalian</td>
+                                    <td>: <?php echo $data['tanggal_pengembalian'];?></td>
+                                </tr>
+                                <tr>
+                                    <td>Peruntukan</td>
+                                    <td>: <?php echo $data['peruntukan'];?></td>
+                                </tr>
+                                <tr>
+                                    <td>Status</td>
+                                    <td>: <?php echo $data['status'];?></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </a>
+            <?php } } ?>
                 </div>
             </div>
 

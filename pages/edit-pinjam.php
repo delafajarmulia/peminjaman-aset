@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="../styling/edit-pinjam.css">
 </head>
 <body>
+    <?php
+        include '../features/navbar.php';
+    ?>
     <div class="container">
         <div class="con-card">
             <!-- <div class="con-table"> -->
@@ -66,9 +69,7 @@
                                 <tr>
                                     <td>Peruntukan</td>
                                     <td>
-                                        <textarea name="peruntukan" id="" cols="27" rows="3">
-                                            <?php echo $data['peruntukan'];?>
-                                        </textarea>
+                                        <textarea name="peruntukan" id="" cols="27" rows="3" readonly><?php echo $data['peruntukan'];?></textarea>
                                     </td>
                                 </tr>
                                 <tr>
