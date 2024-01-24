@@ -1,15 +1,14 @@
 <?php
-    function searchByIdAset($id){
-        include '../connector.php';
-        $query = mysqli_query($conn, "SELECT * FROM asets");
-        $arr = array();
-        while($data = mysqli_fetch_assoc($query)){
-            if($data['id'] === $id){
-                $arr[] = $data;
+    function search($datas, $key){
+        $arr = [];
+        $result = mysqli_fetch_all($datas, MYSQLI_ASSOC);
+        for($i = 0; $i < count($result); $i++){
+            if(strtolower($result[$i]['nama_aset']) == strtolower($key)){
+                array_push($arr, $result[$i]);
             }
         }
 
         include_once '../pages/index.php';
-        resultSearchById($arr);
+        result($arr);
     }
 ?>

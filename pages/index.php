@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="../styling/index.css">
 </head>
 <body>
+    <?php
+        include '../connector.php';
+
+        $datas = mysqli_query($conn, "SELECT p.id as id, nama_peminjam, p.jumlah, tanggal_pinjam, rencana_pengembalian, tanggal_pengembalian, peruntukan, status, a.nama as nama_aset 
+                                            FROM peminjaman as p LEFT JOIN asets as a ON p.aset_id = a.id");
+    ?>
     <div class="container">
 
         <nav>
@@ -67,41 +73,30 @@
             <table>
                 <tr>
                     <form action="index.php" method="post">
-                        <td><input type="text" name="search" id="" class="input-search"></td>
-                        <td><input type="submit" value="Search By ID Barang" name="search-by-id-aset" class="btn-search"></td>
+                        <td><input type="text" name="key" id="" class="input-search" placeholder="      Cari Nama Aset"></td>
+                        <td><input type="submit" value="Search" name="search" class="btn-search"></td>
                     </form>
                 </tr>
             </table>
         </div>
 
         <?php
-            if(isset($_GET['refresh'])){
-                refresh();
-            }else if(isset($_POST['search-by-id-aset'])){
+            if(isset($_GET['refresh'])){ // jika berhasil menambahkan data peminjaman, maka otomatis data akan diupdate tanpa harus reload
+                refresh($datas);
+            }
+            else if(isset($_POST['search'])){ // jika user melakukan pencarian maka aplikasi akan menjalankan logika pencarian yang berada di folder logic, file search.php
                 include '../logic/search.php';
-                searchByIdAset($_POST['search']);
-            }else{
-                refresh();
+                search($datas, $_POST['key']); // lalu menjalankan function search dengan mengirimkan dua parameter berupa semua data peminjaman dan key yang ingin dicari
+            }
+            else{
+                refresh($datas);
             }
         ?>
 
             <div class="show-aset">
                 <div class="con-aset">
         <?php
-            function resultSearchById($datas){
-                var_dump($datas);
-            }
-            
-            function refresh(){
-                include '../connector.php';
-
-                $get_all_data = mysqli_query($conn, "SELECT p.id as id, nama_peminjam, p.jumlah, tanggal_pinjam, rencana_pengembalian, tanggal_pengembalian, peruntukan, status, a.nama as nama_aset 
-                                                    FROM peminjaman as p LEFT JOIN asets as a ON p.aset_id = a.id");
-                
-                loadData($get_all_data); 
-            }
-                
-            function loadData($datas){
+            function refresh($datas){
                 while($data = mysqli_fetch_assoc($datas)){
         ?>
             <!-- <div class="show-aset">
@@ -152,48 +147,54 @@
         ?>
 
             <?php
-                function result($data){
-                    while($data){
+                function result($datas){
+                    if(count($datas) != 0){
+                        for($i = 0; $i< count($datas); $i++){ 
             ?>
-                    <a href="edit-pinjam.php?id=<?php echo $data['id'];?>" class="a-div">
-                        <div class="card-aset">
-                            <table class="table-pinjam">
-                                <tr>
-                                    <td>Nama Aset</td>
-                                    <td>: <?php echo $data['nama_aset'];?></td>
-                                </tr>
-                                <tr>
-                                    <td>Nama Peminjam</td>
-                                    <td>: <?php echo $data['nama_peminjam'];?></td>
-                                </tr>
-                                <tr>
-                                    <td>Jumlah</td>
-                                    <td>: <?php echo $data['jumlah'];?></td>
-                                </tr>
-                                <tr>
-                                    <td>Tanggal Pinjam</td>
-                                    <td>: <?php echo $data['tanggal_pinjam'];?></td>
-                                </tr>
-                                <tr>
-                                    <td>Rencana Pengembalian</td>
-                                    <td>: <?php echo $data['rencana_pengembalian'];?></td>
-                                </tr>
-                                <tr>
-                                    <td>Tanggal Pengembalian</td>
-                                    <td>: <?php echo $data['tanggal_pengembalian'];?></td>
-                                </tr>
-                                <tr>
-                                    <td>Peruntukan</td>
-                                    <td>: <?php echo $data['peruntukan'];?></td>
-                                </tr>
-                                <tr>
-                                    <td>Status</td>
-                                    <td>: <?php echo $data['status'];?></td>
-                                </tr>
-                            </table>
-                        </div>
-                    </a>
-            <?php } } ?>
+                        <a href="edit-pinjam.php?id=<?php echo $datas[$i]['id'];?>" class="a-div">
+                            <div class="card-aset">
+                                <table class="table-pinjam">
+                                    <tr>
+                                        <td>Nama Aset</td>
+                                        <td>: <?php echo $datas[$i]['nama_aset'];?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nama Peminjam</td>
+                                        <td>: <?php echo $datas[$i]['nama_peminjam'];?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jumlah</td>
+                                        <td>: <?php echo $datas[$i]['jumlah'];?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tanggal Pinjam</td>
+                                        <td>: <?php echo $datas[$i]['tanggal_pinjam'];?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rencana Pengembalian</td>
+                                        <td>: <?php echo $datas[$i]['rencana_pengembalian'];?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tanggal Pengembalian</td>
+                                        <td>: <?php echo $datas[$i]['tanggal_pengembalian'];?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Peruntukan</td>
+                                        <td>: <?php echo $datas[$i]['peruntukan'];?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Status</td>
+                                        <td>: <?php echo $datas[$i]['status'];?></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </a>
+                    <?php } 
+                    }else{
+                        echo '<h3>Data Tidak Ditemukan</h3>';
+                    }?>
+                        
+            <?php } ?>
                 </div>
             </div>
 
