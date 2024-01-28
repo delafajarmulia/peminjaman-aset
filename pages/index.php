@@ -10,7 +10,7 @@
     <?php
         include '../connector.php';
 
-        $datas = mysqli_query($conn, "SELECT p.id as id, nama_peminjam, p.jumlah, tanggal_pinjam, rencana_pengembalian, tanggal_pengembalian, peruntukan, status, a.nama as nama_aset 
+        $datas = mysqli_query($conn, "SELECT p.id as id, nama_peminjam, p.jumlah AS jumlah, tanggal_pinjam, rencana_pengembalian, tanggal_pengembalian, peruntukan, status, a.nama as nama_aset 
                                             FROM peminjaman as p LEFT JOIN asets as a ON p.aset_id = a.id");
     ?>
     <div class="container">
@@ -72,6 +72,15 @@
         <div class="search">
             <table>
                 <tr>
+                    <form action="" method="post">
+                        <td>
+                            <select name="key-sort" id="">
+                                <option value="jumlah" selected>Jumlah Aset</option>
+                                <option value="tanggal_pinjam">Tanggal Peminjaman</option>
+                            </select>
+                        </td>
+                        <td><input type="submit" value="    Sort" name="sort"></td>
+                    </form>
                     <form action="index.php" method="post">
                         <td><input type="text" name="key" id="" class="input-search" placeholder="      Cari Nama Aset"></td>
                         <td><input type="submit" value="Search" name="search" class="btn-search"></td>
@@ -88,12 +97,16 @@
                 include '../logic/search.php';
                 search($datas, $_POST['key']); // lalu menjalankan function search dengan mengirimkan dua parameter berupa semua data peminjaman dan key yang ingin dicari
             }
+            else if(isset($_POST['sort'])){
+                include '../logic/sort.php';
+                sorting($datas, $_POST['key-sort']);
+            }
             else{
                 refresh($datas);
             }
         ?>
 
-            <div class="show-aset">
+            <!-- <div class="show-aset"> -->
                 <div class="con-aset">
         <?php
             function refresh($datas){
@@ -145,7 +158,7 @@
                 }
             }            
         ?>
-
+            
             <?php
                 function result($datas){
                     if(count($datas) != 0){
@@ -196,7 +209,7 @@
                         
             <?php } ?>
                 </div>
-            </div>
+            <!-- </div> -->
 
 
         <?php //refresh(); ?>

@@ -1,17 +1,23 @@
 <style>
     nav{
         background-color: #AFC8AD;
-        height: 50px;
+        height: 70px;
         padding-top: 10px;
         padding-left:50px;
     }
+    .con{
+        margin: 10px;
+        margin-bottom:10px;
+    }
     a{
         text-decoration: none;
-        margin-bottom:30px;
+        /* margin-bottom:30px; */
         /* font-weight:900; */
     }
 </style>
 
 <nav>
-    <a href="../pages/index.php"><h1>Pinjem Asep</h1></a>
+    <div class="con">
+        <a href="../pages/index.php"><h1>Pinjem Asep</h1></a>
+    </div>
 </nav>

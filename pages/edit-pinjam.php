@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="../styling/edit-pinjam.css">
 </head>
 <body>
-    <?php
-        include '../features/navbar.php';
-    ?>
     <div class="container">
+        <?php
+            include '../features/navbar.php';
+        ?>
         <div class="con-card">
             <!-- <div class="con-table"> -->
                 <table class="input-table">
