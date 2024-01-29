@@ -35,30 +35,30 @@
                         <form action="../logic/pinjam.php" method="post">
                             <div>
                                 <label for="">Nama Peminjam</label><br>
-                                <input type="text" name="nama_peminjam">
+                                <input type="text" name="nama_peminjam" required>
                             </div>
                             <div class="input">
                                 <label for="">Nama Barang</label><br>
-                                <select name="nama_barang" id="">
+                                <select name="nama_barang" id="" required>
                                     <?php while($aset = mysqli_fetch_assoc($getAsets)){ ?>
                                         <option value="<?php echo $aset['nama'];?>"><?php echo $aset['nama'];}?></option>
                                 </select>
                             </div>
                             <div class="input">
                                 <label for="">Jumlah Aset</label><br>
-                                <input type="number" name="jumlah_barang">
+                                <input type="number" name="jumlah_barang" required>
                             </div>
                             <div class="input">
                                 <label for="">Tanggal Peminjaman</label><br>
-                                <input type="datetime-local" class="input-date" name="tanggal_pinjam">
+                                <input type="datetime-local" class="input-date" name="tanggal_pinjam" required>
                             </div>
                             <div class="input">
                                 <label for="">Rencana Pengembalian</label><br>
-                                <input type="datetime-local" class="input-date" name="rencana_pengembalian">
+                                <input type="datetime-local" class="input-date" name="rencana_pengembalian" required>
                             </div>
                             <div class="input">
                                 <label for="">Peruntukan Peminjaman</label><br>
-                                <textarea name="peruntukan" id="" cols="40" rows="5"></textarea>
+                                <textarea name="peruntukan" id="" cols="40" rows="5" required></textarea>
                             </div>
                             <div class="input">
                                 <input type="submit" value="Simpan" class="submit" name="submit">

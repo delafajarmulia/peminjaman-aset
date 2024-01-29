@@ -5,47 +5,65 @@ html body{
     font-family: Arial, Helvetica, sans-serif;
     color: #474E68;
 }
-.con-aset{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
-    grid-template-columns: repeat(2, 1fr);
+.con-aset h1{
+    text-align: center;
 }
-.aset{
-    min-width: 500px;
+.table-aset{
+    min-width: 800px;
     min-height: 230px;
-    background-color: #AFC8AD;
     padding-top: 10px;
-    /* padding-left: 20px; */
+    padding-left: 10px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
 }
-.data{
+table tr th{
+    border: 1px solid #88AB8E;
+    font-weight: 100;
+}
+table tr td{
+    border: 1px solid #88AB8E;
+    font-weight: 100;
     padding-left: 20px;
 }
 a{
     text-decoration: none;
 }
-.edit{
-    background-color: #88AB8E;
-    width: 450px;
+table tr td .btn{
+    width: 100px;
+    height: 20px;
+}
+.btn-edit{
+    background-color: #AFC8AD;
+    /* width: 450px;
     height: 25px;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; */
     text-align: center;
     padding-top: 3px;
     border-radius: 3px;
     box-shadow: 3px 3px 3px gray;
     margin-bottom: 10px;
+    min-width: 100px;
+    height: 20px;
 }
-.hapus{
-    background-color: #88AB8E;
-    width: 450px;
+.btn-hapus{
+    background-color: #FF6868;
+    /* width: 450px;
     height: 25px;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; */
     text-align: center;
     padding-top: 3px;
     border-radius: 3px;
     box-shadow: 3px 3px 3px gray;
+    width: 100px;
+    height: 20px;
 }
+/* table tr td .cl-id{
+    width: 10px;
+}
+table tr th .cl-id{
+    width: 50px;
+} */

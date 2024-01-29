@@ -11,28 +11,35 @@
         include '../features/navbar.php';
     ?>
     <div class="con-aset">
+        <h1>Daftar Asep</h1>
+        <table class="table-aset">
+            <tr>
+                <th class="cl-id">ID</th>
+                <th>Nama</th>
+                <th>Jumlah</th>
+                <th>Action</th>
+            </tr>
+            <?php
+                include '../connector.php';
 
-        <?php
-            include '../connector.php';
-
-            $query = mysqli_query($conn, "SELECT * FROM asets");
-            while($data = mysqli_fetch_assoc($query)){
-        ?>
-                <div class="aset">
-                    <div class="data">
-                        <h3>Nama : <?php echo $data['nama'];?></h3>
-                        <p>ID : <?php echo $data['id'];?></p>
-                        <p>Jumlah : <?php echo $data['jumlah'];?></p>
-                    </div>
-
-                    <div class="edit">
-                        <a href="edit.php?id=<?php echo $data['id'];?>" class="btn-edit">Edit Aset</a><br>
-                    </div>
-                    <div class="hapus">
-                        <a href="../logic/hapus.php?id=<?php echo $data['id'];?>" class="btn-hapus">Hapus Aset</a>
-                    </div>
-                </div>
-        <?php } ?>
+                $query = mysqli_query($conn, "SELECT * FROM asets");
+                while($data = mysqli_fetch_assoc($query)){
+            ?>
+            <tr>
+                <td class="cl-id"><?php echo $data['id'];?></td>
+                <td><?php echo $data['nama'];?></td>
+                <td><?php echo $data['jumlah'];?></td>
+                <td class="con-btn">
+                    <!-- <div > -->
+                        <a href="edit.php?id=<?php echo $data['id'];?>" class="btn btn-edit">Edit</a>
+                    <!-- </div>
+                    <div > -->
+                        <a href="../logic/hapus.php?id=<?php echo $data['id'];?>" class="btn btn-hapus">Hapus</a>
+                    <!-- </div> -->
+                </td>
+            </tr>
+            <?php } ?>
+        </table>
     </div>
 </body>
 </html>
