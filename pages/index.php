@@ -74,16 +74,20 @@
                 <tr>
                     <form action="" method="post">
                         <td>
-                            <select name="key-sort" id="">
+                            <select name="key-sort" id="" class="key">
                                 <option value="jumlah" selected>Jumlah Aset</option>
                                 <option value="tanggal_pinjam">Tanggal Peminjaman</option>
                             </select>
                         </td>
-                        <td><input type="submit" value="    Sort" name="sort"></td>
+                        <td><input type="submit" value="Sort" name="sort" class="btn-key"></td>
                     </form>
+                </tr>
+            </table>
+            <table>
+                <tr>
                     <form action="index.php" method="post">
-                        <td><input type="text" name="key" id="" class="input-search" placeholder="      Cari Nama Aset"></td>
-                        <td><input type="submit" value="Search" name="search" class="btn-search"></td>
+                        <td><input type="text" name="key" id="" class="input-search" placeholder="Cari Nama Aset" class="key"></td>
+                        <td><input type="submit" value="Search" name="search" class="btn-key"></td>
                     </form>
                 </tr>
             </table>
@@ -106,14 +110,11 @@
             }
         ?>
 
-            <!-- <div class="show-aset"> -->
                 <div class="con-aset">
         <?php
             function refresh($datas){
                 while($data = mysqli_fetch_assoc($datas)){
         ?>
-            <!-- <div class="show-aset">
-                <div class="con-aset"> -->
                     <a href="edit-pinjam.php?id=<?php echo $data['id'];?>" class="a-div">
                         <div class="card-aset">
                             <table class="table-pinjam">
@@ -152,8 +153,6 @@
                             </table>
                         </div>
                     </a>
-                <!-- </div>
-            </div> -->
         <?php
                 }
             }            
@@ -209,10 +208,6 @@
                         
             <?php } ?>
                 </div>
-            <!-- </div> -->
-
-
-        <?php //refresh(); ?>
     </div>
 </body>
 </html>
