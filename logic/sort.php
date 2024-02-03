@@ -10,13 +10,11 @@
                     $temp = $datas[$j];
                     $datas[$j] = $datas[$j+1];
                     $datas[$j+1] = $temp;
-                    // var_dump($datas[$j][$key]);
                 }
             }
         }
 
         include_once '../pages/index.php';
         result($datas);
-        // var_dump($key);
     }
 ?>

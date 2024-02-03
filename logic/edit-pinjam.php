@@ -5,16 +5,14 @@
         $id = $_POST['id'];
         $rencanaKembali = $_POST['rencana_kembali'];
         $tanggalKembali = $_POST['tanggal_pengembalian'];
-        // $status = $_POST['status'];
 
         if($tanggalKembali > $rencanaKembali){
-            // echo "telat";
             $query = mysqli_query($conn, "UPDATE peminjaman SET 
                                     tanggal_pengembalian='$tanggalKembali', status='terlambat-dikembalikan'
                                     WHERE id=$id");
 
             if(!$query){
-                die("duh");
+                die("error");
             }else{
                 header('location:../pages/index.php');
             }
@@ -24,7 +22,7 @@
                                     WHERE id=$id");
 
             if(!$query){
-                die("duh");
+                die("error");
             }else{
                 header('location:../pages/index.php');
             }

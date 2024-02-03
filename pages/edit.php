@@ -21,7 +21,6 @@
         while($data = mysqli_fetch_assoc($getData)){
     ?>
     <div class="con-edit">
-        <!-- <div class="card-edit"> -->
             <h3>Edit Asep</h3>
             <div class="card-form">
                 <form action="../logic/edit.php" method="post">
@@ -43,7 +42,6 @@
                     </div>
                 </form>
             </div>
-        <!-- </div> -->
     </div>
 
     <?php } ?>

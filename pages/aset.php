@@ -30,12 +30,8 @@
                 <td><?php echo $data['nama'];?></td>
                 <td><?php echo $data['jumlah'];?></td>
                 <td class="con-btn">
-                    <!-- <div > -->
-                        <a href="edit.php?id=<?php echo $data['id'];?>" class="btn btn-edit">Edit</a>
-                    <!-- </div>
-                    <div > -->
-                        <a href="../logic/hapus.php?id=<?php echo $data['id'];?>" class="btn btn-hapus">Hapus</a>
-                    <!-- </div> -->
+                    <a href="edit.php?id=<?php echo $data['id'];?>" class="btn btn-edit">Edit</a>
+                    <a href="../logic/hapus.php?id=<?php echo $data['id'];?>" class="btn btn-hapus">Hapus</a>
                 </td>
             </tr>
             <?php } ?>

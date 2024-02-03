@@ -11,8 +11,6 @@
     }
     a{
         text-decoration: none;
-        /* margin-bottom:30px; */
-        /* font-weight:900; */
     }
 </style>
 

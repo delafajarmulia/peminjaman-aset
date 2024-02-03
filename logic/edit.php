@@ -1,6 +1,5 @@
 <?php
     include '../connector.php';
-    // include '../pages/edit.php';
 
     if(isset($_POST['submit'])){
         $oldID = $_POST['oldID'];

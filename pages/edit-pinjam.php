@@ -12,7 +12,6 @@
             include '../features/navbar.php';
         ?>
         <div class="con-card">
-            <!-- <div class="con-table"> -->
                 <table class="input-table">
                     <div class="title">
                         <h1>Pinjem Asep</h1>
@@ -89,7 +88,6 @@
                         <?php } ?>
                     </form>
                 </table>
-            <!-- </div> -->
         </div>
     </div>
 </body>

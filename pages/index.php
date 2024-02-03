@@ -25,8 +25,7 @@
                 <h1 class="title-card">Pinjem Asep</h1>
 
                 <?php
-                    include '../connector.php';
-                    $getAsets = mysqli_query($conn, "SELECT nama FROM asets");
+                    $getAsets = mysqli_query($conn, "SELECT id, nama FROM asets");
                 ?>
 
                 <div class="input-content">
@@ -39,9 +38,9 @@
                             </div>
                             <div class="input">
                                 <label for="">Nama Barang</label><br>
-                                <select name="nama_barang" id="" required>
+                                <select name="id_aset" id="" required>
                                     <?php while($aset = mysqli_fetch_assoc($getAsets)){ ?>
-                                        <option value="<?php echo $aset['nama'];?>"><?php echo $aset['nama'];}?></option>
+                                        <option value="<?php echo $aset['id'];?>"><?php echo $aset['nama'];}?></option>
                                 </select>
                             </div>
                             <div class="input">
